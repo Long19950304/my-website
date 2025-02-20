@@ -41,6 +41,7 @@
         .header p {
             font-size: 1.25rem;
             opacity: 0.9;
+            margin-bottom: 0.5rem;
         }
 
         .container {
@@ -63,19 +64,17 @@
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .achievement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .achievement-item {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 0.5rem;
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 1.5rem;
+            background-color: var(--primary-color);
+            display: inline-block;
         }
 
         .publication-list {
@@ -84,8 +83,14 @@
 
         .publication-item {
             margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: var(--bg-light);
+            transition: transform 0.2s;
+        }
+
+        .publication-item:hover {
+            transform: translateX(10px);
         }
 
         .publication-title {
@@ -99,31 +104,85 @@
             color: #666;
         }
 
-        .presentation-list {
-            list-style: none;
-            margin-top: 1rem;
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .presentation-item {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--bg-light);
+        .achievement-item {
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            border-radius: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .conference-list {
+            list-style: none;
+        }
+
+        .conference-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: var(--bg-light);
             border-radius: 0.5rem;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-item {
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-experience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .media-item {
+            padding: 1.5rem;
+            background-color: var(--bg-light);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin-top: 2rem;
         }
 
-        .social-media a {
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
             color: var(--primary-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .contact-section {
@@ -154,15 +213,17 @@
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 2rem 1rem;
-            }
-            
             .container {
                 padding: 1rem;
             }
 
-            .achievement-grid {
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .achievement-grid,
+            .project-grid,
+            .media-experience {
                 grid-template-columns: 1fr;
             }
         }
@@ -172,24 +233,24 @@
     <header class="header">
         <h1>赵志龙</h1>
         <p>澳门大学博士 | 华南理工大学新闻与传播学院博士后</p>
-        <p>智能与计算传播 | 健康传播 | 国际传播研究</p>
+        <p>智能与计算传播 | 健康传播 | 国际传播研究专家</p>
     </header>
 
     <main class="container">
         <section class="card">
-            <h2 class="section-title">学术研究方向</h2>
+            <h2 class="section-title">研究方向</h2>
             <div class="achievement-grid">
                 <div class="achievement-item">
                     <h3>智能与计算传播</h3>
-                    <p>专注于数字媒体使用行为分析、智能舆情监测等研究领域</p>
+                    <p>研究数字媒体使用行为、智能舆情监测、智能传播系统等领域，探索人工智能在传播学中的应用。</p>
                 </div>
                 <div class="achievement-item">
                     <h3>健康传播</h3>
-                    <p>研究数字媒体对健康素养的影响、家庭健康教育等议题</p>
+                    <p>专注于数字健康素养、家庭健康教育、健康信息传播效果等研究，推动健康传播的理论创新。</p>
                 </div>
                 <div class="achievement-item">
                     <h3>国际传播</h3>
-                    <p>关注粤港澳大湾区传播研究、一国两制话语建构等课题</p>
+                    <p>关注粤港澳大湾区传播研究、跨文化传播、一国两制话语建构等议题，推进区域传播研究。</p>
                 </div>
             </div>
         </section>
@@ -199,60 +260,114 @@
             <ul class="publication-list">
                 <li class="publication-item">
                     <div class="publication-title">Parental Mediation, Digital Media Usage, and Health Literacy: An Exploration Among Chinese Elementary School Students</div>
-                    <div class="publication-meta">Health Communication, 2024 (SSCI Q1)</div>
+                    <div class="publication-meta">Health Communication, 2024, 1–13. (SSCI Q1)</div>
                 </li>
                 <li class="publication-item">
                     <div class="publication-title">"Private Dispute or Public Responsibility?" - Newspaper Framing of Domestic Violence in Four Chinese Regions</div>
-                    <div class="publication-meta">Journal of Family Violence, 2024 (SSCI Q1)</div>
+                    <div class="publication-meta">Journal of Family Violence, 2024, In pressing. (SSCI Q1)</div>
                 </li>
                 <li class="publication-item">
                     <div class="publication-title">First-Person Influences on Third-Person Perceptions</div>
-                    <div class="publication-meta">China Media Research, 2023</div>
+                    <div class="publication-meta">China Media Research, 2023, 19(4), 1-28. (Excellence Research Australia)</div>
                 </li>
+                <li class="publication-item">
+                    <div class="publication-title">影响估差：京湘新闻人中的第三者效应和第一者因素</div>
+                    <div class="publication-meta">新闻大学，2020,（6），63-81+124。（CSSCI）</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">学术会议报告</h2>
+            <ul class="conference-list">
+                <li class="conference-item">
+                    <h3>AEJMC 2024年年会</h3>
+                    <p>Parental mediation, digital media usage, and health literacy: An exploration among Chinese elementary school students</p>
+                    <p class="publication-meta">费城，美国，2024年</p>
+                </li>
+                <li class="conference-item">
+                    <h3>ICA 2022年年会</h3>
+                    <p>First-person influences on third-person perceptions</p>
+                    <p class="publication-meta">巴黎，法国，2022年</p>
+                </li>
+                <li class="conference-item">
+                    <h3>智能与计算传播学2024年年会</h3>
+                    <p>Is Negative Representation More Engaging? The Influence of News Title Framing of Older Adults on Viewer Behavior</p>
+                    <p class="publication-meta">浙江工业大学，杭州，2024年</p>
+                </li>
+                <li class="conference-item">
+                    <h3>粤港澳大湾区国际传播发展论坛</h3>
+                    <p>智能舆情监测在"一国两制"话语建构中的应用研究：基于香港报业的分析</p>
+                    <p class="publication-meta">华南理工大学，广州，2024年</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2 class="section-title">研究项目</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <h3>澳门居民媒介使用研究（2021）</h3>
+                    <p>澳门特别行政区政府新闻局</p>
+                    <p>厅局级项目，资助金额30万元</p>
+                    <p>结项评级：优秀</p>
+                </div>
+                <div class="project-item">
+                    <h3>澳门青年参与粤港澳大湾区意向调查（2020-2021）</h3>
+                    <p>澳门大学澳门研究中心</p>
+                    <p>厅局级项目，资助金额20万元</p>
+                    <p>结项评级：优秀</p>
+                </div>
+                <div class="project-item">
+                    <h3>COMET-19心理健康与媒介使用跨国调查</h3>
+                    <p>国际合作研究项目</p>
+                    <p>探讨疫情期间媒介使用与心理健康关系</p>
+                </div>
+                <div class="project-item">
+                    <h3>广东省中小学校健康教育现况调研（2022-2023）</h3>
+                    <p>调查研究项目</p>
+                    <p>分析健康教育实施情况和效果</p>
+                </div>
             </ul>
         </section>
 
         <section class="card">
             <h2 class="section-title">传媒实践</h2>
-            <div class="achievement-grid">
-                <div class="achievement-item">
-                    <h3>自媒体运营</h3>
-                    <p>知识类自媒体频道获得Bilibili十万粉丝奖牌，总粉丝量达40万+</p>
+            <div class="media-experience">
+                <div class="media-item">
+                    <h3>知识传播</h3>
+                    <p>独立运营知识类自媒体频道，在Bilibili获得十万粉丝奖牌</p>
+                    <p>总粉丝量超40万，覆盖Bilibili、抖音、网易等平台</p>
                 </div>
-                <div class="achievement-item">
+                <div class="media-item">
                     <h3>创作成就</h3>
-                    <p>2020年网易新闻签约作者，被评为潜力创作者</p>
+                    <p>2020年网易新闻签约作者</p>
+                    <p>被评为潜力创作者</p>
                 </div>
-                <div class="achievement-item">
+                <div class="media-item">
                     <h3>影视作品</h3>
-                    <p>执导剧情短片《普快列车》入围2017年澳门国际电影节短片组</p>
+                    <p>执导剧情短片《普快列车》</p>
+                    <p>入围2017年澳门国际电影节短片组</p>
                 </div>
             </div>
-        </section>
 
-        <section class="card">
-            <h2 class="section-title">项目经历</h2>
-            <ul class="presentation-list">
-                <li class="presentation-item">
-                    <h3>COMET-19心理健康与媒介使用跨国调查</h3>
-                    <p>参与国际合作研究项目，探讨疫情期间媒介使用与心理健康关系</p>
-                </li>
-                <li class="presentation-item">
-                    <h3>澳门居民媒介使用研究（2008-2021）</h3>
-                    <p>澳门大学澳门研究中心主持的长期追踪研究项目</p>
-                </li>
-            </ul>
-        </section>
-
-        <div class="contact-section">
-            <h2 class="section-title">联系方式</h2>
-            <p>Email: zhaozhilong0628@scut.edu.cn</p>
-            <a href="mailto:zhaozhilong0628@scut.edu.cn" class="contact-button">发送邮件</a>
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2024 赵志龙 - 所有权利保留</p>
-    </footer>
-</body>
-</html>
+            <div class="contact-section">
+              <h2 class="section-title">联系方式</h2>
+              <p>Email: zhaozhilong0628@scut.edu.cn</p>
+              <div style="margin: 2rem 0;">
+                  <a href="mailto:zhaozhilong0628@scut.edu.cn" class="contact-button">发送邮件</a>
+              </div>
+              <div class="social-links" style="margin-top: 2rem;">
+                  <p>社交媒体账号：</p>
+                  <p>Bilibili: 龙翟GE</p>
+                  <p>抖音: longxige</p>
+              </div>
+          </div>
+      </main>
+  
+      <footer>
+          <p>© 2024 赵志龙 - 所有权利保留</p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem;">最后更新时间：2024年2月</p>
+      </footer>
+  </body>
+  </html>
